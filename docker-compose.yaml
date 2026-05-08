@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  application:
+    build: .
+    container_name: email-service-portfolio
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      SUPPORT-EMAIL:
+      APP-PASSWORD:
