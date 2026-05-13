@@ -18,9 +18,6 @@ public class UserController {
 
     @PostMapping("send_email")
     public ResponseEntity<SendMailResponseDTO> sendMailToUser(@RequestBody SendMailRequestDTO request){
-        System.out.println("cname : "+ request.getName());
-        System.out.println("cfrom : "+request.getFrom());
-        System.out.println("cmessage : "+request.getMessage());
 
         SendMailResponseDTO response = userService.sendMail(request);
 

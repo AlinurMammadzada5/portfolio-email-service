@@ -16,11 +16,8 @@ public class MailService {
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, "UTF-8");
         helper.setTo(to);
-        System.out.println("To Passed");
         helper.setSubject(subject);
-        System.out.println("Subject passed");
         helper.setText(htmlBody, true);
         mailSender.send(message);
-        System.out.println("Mail sent");
     }
 }

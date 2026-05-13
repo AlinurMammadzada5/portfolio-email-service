@@ -6,8 +6,6 @@ services:
     container_name: email-service-portfolio
     ports:
       - "8080:8080"
-    depends_on:
-      - postgres
     environment:
       SUPPORT-EMAIL:
       APP-PASSWORD:
