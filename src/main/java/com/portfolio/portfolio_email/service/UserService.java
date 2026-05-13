@@ -12,11 +12,13 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final MailService mailService;
-    @Value("${MY_EMAIL_ADDRESS}")
-    private static String MAIL_ADDRESS;
+
+    @Value("${mail.name}")
+    private String MAIL_ADDRESS;
 
     public SendMailResponseDTO sendMail(SendMailRequestDTO request) {
         try {
+            System.out.println(MAIL_ADDRESS);
             mailService.sendHtml(MAIL_ADDRESS, request.getName(), combineFromAndMessage(request.getFrom(), request.getMessage()));
             return SendMailResponseDTO
                     .builder()
